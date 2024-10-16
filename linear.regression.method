@@ -1,0 +1,33 @@
+#data
+x = [6,8,9,8,3,18,4,10,5,12,13,10,7]
+y = [100,87,89,90,113,87,104,88,94,79,78,86,88]
+
+# import libraries
+import matplotlib.pyplot as plt
+from scipy import stats
+
+#method1
+slope, intercept, r, p, std_err = stats.linregress(x, y)
+
+def regmod(x):
+  return slope * x + intercept
+
+reglist = list(map(regmod, x))
+
+plt.scatter(x, y)
+plt.plot(x, reglist)
+plt.show()
+
+#method2
+
+#import library 
+import statsmodels.api as sm
+
+#add variable
+x = sm.add_constant(x)
+
+#fit linear regression model
+linreg = sm.OLS(y, x).fit()
+
+#view model summary
+print(linreg.summary())
