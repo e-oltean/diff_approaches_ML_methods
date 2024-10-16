@@ -1,1 +1,1 @@
-In this repository, we aim to show different ways from the point o view of the code and library used within the same method
+In this repository, the purpose to show different ways from the point of view of the code and libraries used in Python, within the same method in Machile Learning. Thus, one can use different code blocks and different libraries from Python.
